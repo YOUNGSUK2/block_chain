@@ -11,7 +11,7 @@ class Block{ // 블록 관련 객체 선언
     constructor(private message){ // 거래 목록
         Block.index += Block.index;
         this.timestamp = new Date();
-        this.key=1; //남균
+        this.key=5;
         this.data =  // hash = previous hash + data + date + index
             Block.index
             + this.timestamp
@@ -69,3 +69,4 @@ console.log(tinycoin.chain[1].hash.toString());
 console.log(tinycoin.chain[2].previousHash.toString());
 console.log(tinycoin.chain[2].hash.toString());
 // console.log(genesis.createHash().toString());
+12121
