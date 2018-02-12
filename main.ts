@@ -68,4 +68,3 @@ console.log(tinycoin.chain[1].hash.toString());
 console.log(tinycoin.chain[2].previousHash.toString());
 console.log(tinycoin.chain[2].hash.toString());
 // console.log(genesis.createHash().toString());
-11KHKHKHL
