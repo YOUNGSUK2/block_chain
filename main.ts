@@ -69,6 +69,8 @@ tinycoin.addBlock(xman);
 xman.mining(4);
 console.log(tinycoin.chain[2].hash.toString());
 console.log(genesis.createHash().toString());
+console.log(genesis.createHash().toString());
+console.log(genesis.createHash().toString());
 //console.log(genesis.createHash().toString());
 //console.log(tinycoin.isValid());
 //console.log(tinycoin.chain[0].previousHash.toString());
