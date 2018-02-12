@@ -21,6 +21,13 @@ class Block{ // 블록 관련 객체 선언
     createHash = function(){
         return crypto.HmacSHA256(this.message, this.key.toString());
     }
+    mining(zeroes){ //난이도
+                while(this.hash.toString().substring(0, zeroes) !== Array(zeroes + 1).join("0")) {
+                    //console.log(this.hash.toString().substring(0, zeroes));
+                    this.key++
+                    this.hash = crypto.HmacSHA256(this.message, this.key.toString());
+                }
+            }
 };
 
 class Blockchain{ //블록 체인 구조 정의
@@ -59,12 +66,15 @@ tinycoin.addBlock(superman);
 const xman = new Block("hellow1");
 tinycoin.addBlock(xman);
 
-console.log(genesis.createHash().toString());
-console.log(tinycoin.isValid());
-console.log(tinycoin.chain[0].previousHash.toString());
-console.log(tinycoin.chain[0].hash.toString());
-console.log(tinycoin.chain[1].previousHash.toString());
-console.log(tinycoin.chain[1].hash.toString());
-console.log(tinycoin.chain[2].previousHash.toString());
+xman.mining(2);
 console.log(tinycoin.chain[2].hash.toString());
+
+//console.log(genesis.createHash().toString());
+//console.log(tinycoin.isValid());
+//console.log(tinycoin.chain[0].previousHash.toString());
+//console.log(tinycoin.chain[0].hash.toString());
+//console.log(tinycoin.chain[1].previousHash.toString());
+//console.log(tinycoin.chain[1].hash.toString());
+//console.log(tinycoin.chain[2].previousHash.toString());
+//console.log(tinycoin.chain[2].hash.toString());
 // console.log(genesis.createHash().toString());
